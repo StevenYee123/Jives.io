@@ -1,3 +1,4 @@
+const resume = require("./resume.json");
 const { BotkitConversation } = require("botkit");
 
 module.exports = function(controller){
@@ -5,7 +6,7 @@ module.exports = function(controller){
 
     jivesBot.say({ type: "typing" });
     jivesBot.addAction("welcome");
-    jivesBot.addMessage("Hello, I'm Jives.io. How can I be of service to you today?", "next_thread");
+    jivesBot.addMessage("Hello, I'm " + resume.basics.name + ". How can I be of service to you today?", "next_thread");
 
     jivesBot.addAction("next_thread", "welcome");
     jivesBot.addMessage({ type: "typing" }, "next_thread");
@@ -17,7 +18,12 @@ module.exports = function(controller){
     jivesBot.addMessage(
         {
             text: "What would you like to know about me?",
-            // quick_replies: controller.fieldFormatter(controller.resume),
+            quick_replies : [
+                {
+                    title: "Work",
+                    payload: "work"
+                }
+            ]
         },
         "last_thread"
     );

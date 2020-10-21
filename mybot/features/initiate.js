@@ -16,7 +16,8 @@ module.exports = function(controller){
 
     jivesBot.addMessage(
         {
-            text: "What would you like to know about me?"
+            text: "What would you like to know about me?",
+            // quick_replies: controller.fieldFormatter(controller.resume),
         },
         "last_thread"
     );

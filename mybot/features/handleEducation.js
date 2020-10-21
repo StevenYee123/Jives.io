@@ -2,25 +2,25 @@ const resume = require('./resume.json');
 
 module.exports = (controller) => {
 
-//     controller.hears( ['name', 'first name', 'full name', 'last name','profile'], 'message', async(bot, message) => {
-//         await bot.reply(message, {type: 'typing'});
-//         setTimeout(async () => {
-//             let info = resume.basics
-//             // will have to reset context because turn has now ended.
-//             await bot.changeContext(message.reference);
-//             await bot.reply(message, `I am ${info.name}. I am a ${info.label}`)
-//         }, 800);
-//     });
+    controller.hears( ['name', 'first name', 'full name', 'last name','profile'], 'message', async(bot, message) => {
+        await bot.reply(message, {type: 'typing'});
+        setTimeout(async () => {
+            let info = resume.basics
+            // will have to reset context because turn has now ended.
+            await bot.changeContext(message.reference);
+            await bot.reply(message, `I am ${info.name}. I am a ${info.label}`)
+        }, 800);
+    });
 
-//    controller.hears( ['phone','contact', 'phone number','email', 'reach out'], 'message', async(bot, message) => {
-//         await bot.reply(message, {type: 'typing'});
-//         setTimeout(async () => {
-//             let info = resume.basics
-//             // will have to reset context because turn has now ended.
-//             await bot.changeContext(message.reference);
-//             await bot.reply(message, `Here's my phone number: ${info.phone} and my email address: ${info.email}`)
-//         }, 800);
-//     });
+   controller.hears( ['phone','contact', 'phone number','email', 'reach out'], 'message', async(bot, message) => {
+        await bot.reply(message, {type: 'typing'});
+        setTimeout(async () => {
+            let info = resume.basics
+            // will have to reset context because turn has now ended.
+            await bot.changeContext(message.reference);
+            await bot.reply(message, `Here's my phone number: ${info.phone} and my email address: ${info.email}`)
+        }, 800);
+    });
 
     controller.hears(['previous job','work','job','current work','current job','job history'], 'message', async(bot, message) => {
         await bot.reply(message, {type: 'typing'});
@@ -56,11 +56,11 @@ module.exports = (controller) => {
                 quick_replies: [
                     {
                         title: 'Yes',
-                        payload: 'currentJob yes'
+                        payload: 'hello'
                     },
                     {
                         title: 'No',
-                        payload: 'currentJob no'
+                        payload: 'help'
                     },
                 ]
             }

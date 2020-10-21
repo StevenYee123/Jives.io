@@ -42,10 +42,15 @@ module.exports = function(controller){
         await bot.beginDialog("welcome");
     });
 
-    // controller.hears(['hi','hello','howdy','hey','aloha','hola','bonjour','oi'],['message'], async (bot,message) => {
-    
-    //   // do something to respond to message
-    //   await bot.reply(message, "Hello! I'm Jives.io. How may I be of assistance to you today? ");
-    // });
+    controller.hears(['hi','hello','howdy','hey','aloha','hola','bonjour','oi'],['message'], async (bot,message) => {
+        await bot.reply(message, {type: 'typing'});
+
+        setTimeout(async () => {
+        // will have to reset context because turn has now ended.
+        await bot.changeContext(message.reference);
+        await bot.reply(message, "Hello! I'm Jives.io, what would you like to know about me?");
+        }, 1000);
+
+    });
 };
 

@@ -38,18 +38,21 @@ module.exports = (controller) => {
         
         setTimeout(async () => {
 
-            // let info = resume.basics.email;
-            // let info = resume.skills.keywords;
+            let info = resume.skills[0].keywords;
 
-            // let skills = "";
+            let skills = "";
 
-            // info.forEach((hash, i) => {
-            //         skills += (hash + " ")
-            // })
+            info.forEach((hash, i) => {
+                if (i < info.length - 1) {
+                    skills += (hash + ", ");
+                } else {
+                    skills += hash
+                }
+            })
 
             function displaySkills () {
-                return `test`;
-                // return skills;
+                // return `test`;
+                return skills;
             }
 
             await bot.changeContext(message.reference);

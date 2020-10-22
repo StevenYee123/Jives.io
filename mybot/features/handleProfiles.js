@@ -39,8 +39,7 @@ module.exports = (controller) => {
             
 
             let website = resume.basics.website;
-            let linkedin = resume.profiles.url;
-
+            let linkedin = resume.profiles[0].url;
             function displayWebsite () {
                 return `${website}`
             }

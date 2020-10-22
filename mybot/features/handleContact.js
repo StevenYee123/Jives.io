@@ -30,7 +30,6 @@ module.exports = (controller) => {
             }
         ]
     };
-    
    controller.hears('Yes, I would like to know more personal info','message', async(bot, message) => {
         await bot.reply(message, {type: 'typing'});
         await bot.changeContext(message.reference);
@@ -52,7 +51,7 @@ module.exports = (controller) => {
     controller.hears(['about me','contact','contacts','personal info','personal information','email'], 'message', async(bot, message) => {
         await bot.reply(message, {type: 'typing'});
         setTimeout(async () => {
-            const currentJob = {
+            const currentInfo = {
                 text: `Would you like more info`,
                 quick_replies: [
                     {
@@ -87,7 +86,7 @@ module.exports = (controller) => {
             await bot.reply(message, displayPhone());
             await bot.reply(message, {type: 'typing'});
             setTimeout(async () => {
-               await bot.reply(message,currentJob);
+               await bot.reply(message,currentInfo);
             },1000)   
         }, 500);
     });

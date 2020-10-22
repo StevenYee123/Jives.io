@@ -41,6 +41,15 @@
             "endDate" : "05-08-2020",
             "gpa" : "4.0",
             "courses" : ["BUT 101 - Butlery 101"]
+        },
+        {
+            "institution" : "NYU2",
+            "area" : "Software Development",
+            "studyType" : "Bachelor",
+            "startDate" : "01-13-2020",
+            "endDate" : "05-08-2020",
+            "gpa" : "4.0",
+            "courses" : ["BUT 101 - Butlery 101"]
         }
     ],
     "skills" : [

@@ -24,6 +24,10 @@ module.exports = function(controller){
                     payload: "work"
                 },
                 {
+                    title: "About Me",
+                    payload: "about me"
+                },
+                {
                     title: "Profiles",
                     payload: "profiles"
                 },

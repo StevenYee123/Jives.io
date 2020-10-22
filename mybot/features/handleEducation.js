@@ -9,6 +9,10 @@ module.exports = (controller) => {
                     payload: "work"
                 },
                 {
+                    title: "About Me",
+                    payload: "about me"
+                },
+                {
                     title: "Profiles",
                     payload: "profiles"
                 },

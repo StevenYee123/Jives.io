@@ -105,6 +105,9 @@ module.exports = (controller) => {
 
     controller.hears('bye', 'message', async(bot,message) => {
         await bot.reply(message, {type: 'typing'});
+        await bot.changeContext(message.reference);
+        setTimeout(async () => {
         await bot.reply(message, "Bye! Hope to see you soon!")
+        },500)
     })
 }

@@ -33,7 +33,7 @@ module.exports = (controller) => {
     
   
 
-    controller.hears(['profile','profiles','github','portfolio','personal site'], 'message', async(bot, message) => {
+    controller.hears([ /.*profile.*/, /.*github.*/, /.*portfolio.*/, /.*personal site.*/], 'message', async(bot, message) => {
         await bot.reply(message, {type: 'typing'});
         setTimeout(async () => {
             

@@ -50,7 +50,7 @@ module.exports = (controller) => {
         },1500)
     });
 
-    controller.hears(['school', 'education','bootcamp', 'major'], 'message', async(bot, message) => {
+    controller.hears([/.*school.*/, /.*education.*/,/.*bootcamp.*/, /.*major.*/], 'message', async(bot, message) => {
         await bot.reply(message, {type: 'typing'});
         await bot.changeContext(message.reference);
         setTimeout(async () => {

@@ -48,7 +48,7 @@ module.exports = (controller) => {
 
    });
 
-    controller.hears(['about me','contact','contacts','personal info','personal information','email'], 'message', async(bot, message) => {
+    controller.hears([/.*about me.*/, /.*contact.*/, /.*personal info.*/, /.*personal information.*/, /.*email.*/], 'message', async(bot, message) => {
         await bot.reply(message, {type: 'typing'});
         setTimeout(async () => {
             const currentInfo = {

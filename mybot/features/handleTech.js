@@ -33,14 +33,14 @@ module.exports = (controller) => {
 
  
 
-    controller.hears(['tech','technologies','skills'], 'message', async(bot, message) => {
+    controller.hears([/.*tech.*/ ,/.*skill.*/ ], 'message', async(bot, message) => {
         await bot.reply(message, {type: 'typing'});
         
         setTimeout(async () => {
 
             let info = resume.skills[0].keywords;
 
-            let skills = "";
+            let skills = "I am proficient in ";
 
             info.forEach((hash, i) => {
                 if (i < info.length - 1) {

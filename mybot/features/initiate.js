@@ -65,7 +65,7 @@ module.exports = function(controller){
         await bot.beginDialog("welcome");
     });
 
-    controller.hears(['hi','hello','howdy','hey','aloha','hola','bonjour','oi'],['message'], async (bot,message) => {
+    controller.hears([/^hi.*/,/^hello.*/,/^howdy.*/,/^hey.*/,/^aloha.*/,/^hola.*/,/^bonjour.*/,/^oi.*/],['message'], async (bot,message) => {
         await bot.reply(message, {type: 'typing'});
 
         setTimeout(async () => {

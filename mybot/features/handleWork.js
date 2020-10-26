@@ -49,7 +49,7 @@ module.exports = (controller) => {
 
    });
 
-    controller.hears(['previous job','work','job','current work','current job','job history'], 'message', async(bot, message) => {
+    controller.hears([/.*career.*/ , /.*work.*/ , /.*job.*/ ], 'message', async(bot, message) => {
         await bot.reply(message, {type: 'typing'});
         setTimeout(async () => {
             const currentJob = {

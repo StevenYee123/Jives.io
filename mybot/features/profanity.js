@@ -1,7 +1,7 @@
 const { BotkitConversation } = require("botkit");
 
 module.exports = function(controller){
-    controller.hears(['fuck', 'shit', 'damn', 'hell', 'bitch'], ['message'], async (bot, message) => {
+    controller.hears([/.*fuck.*/ , /.*shit.*/ , /.*damn.*/ , /.*\shell.*/ , /.*bitch.*/, /.*\sass.*/], ['message'], async (bot, message) => {
 
         await bot.reply(message, {type: 'typing'});
         setTimeout(async () => {
